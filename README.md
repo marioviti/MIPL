@@ -2,7 +2,7 @@
 My Image Processing Library
 
 # What is MIPL 
-A collection of image processing routines collected from opencv numpy and scipy.
+A collection of image processing routines from opencv, numpy and scipy.
 
 * python version: 3.5.2
 * opencv verison: 3.2.0

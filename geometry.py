@@ -1,10 +1,12 @@
 import cv2
 
 def resize(image,fx=0.5,fy=0.5):
+    """Resizing images correctly using frequency filtering preprocessing."""
     M = int(1./fx)      #,MaxWx = 1./2.*M # in frequency domain
     N = int(1./fy)      #,MaxWy = 1./2.*N
     blurred = cv2.GaussianBlur(image,((2*M)-1,(2*N)-1),0)
-    resized = cv2.resize(blurred,None,fx=fx,fy=fy,interpolation=cv2.INTER_NEAREST)
+    interpolation = cv2.INTER_NEAREST # there's no need for interpolation
+    resized = cv2.resize(blurred,None,fx=fx,fy=fy,interpolation=interpolation)
     return resized
 
 def get_perspective_transform(src,dst):
